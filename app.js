@@ -1,12 +1,21 @@
+// Require group
 const express = require('express');
 const createError = require('http-errors')
-const app = express()
 const path = require('path')
-const port = 3000
 const logger = require('morgan')
+const indexRouting = require('./routes/index.js')
+
+//Declaration group
+const app = express()
+const port = 3000
+
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+
+
+app.use('/', indexRouting)
+
 
 app.use(logger('dev'))
 
