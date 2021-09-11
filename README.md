@@ -16,6 +16,8 @@ As has been said earlier, this app runs on Express.js, but there are more depend
     "http-errors": "^1.8.0",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
 
 ## App Execution
 
