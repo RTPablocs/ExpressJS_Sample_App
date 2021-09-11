@@ -4,6 +4,8 @@ const createError = require('http-errors')
 const path = require('path')
 const logger = require('morgan')
 const indexRouting = require('./routes/index.js')
+const productRouting = require('./routes/products.js')
+const userRouting = require('./routes/users.js')
 
 //Declaration group
 const app = express()
@@ -15,7 +17,10 @@ app.set('view engine', 'pug')
 
 
 app.use('/', indexRouting)
+app.use('/products', productRouting)
+app.use('/users', userRouting)
 
+app.use('/styles', express.static(path.join(__dirname, 'styles')))
 
 app.use(logger('dev'))
 
@@ -23,6 +28,7 @@ app.use(logger('dev'))
 app.use(function (req, res, next) {
     next(createError(404))
 })
+
 
 // Render Errors with pug
 app.use(function (err, req, res, next) {
