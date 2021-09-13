@@ -5,10 +5,8 @@ const userController = require('../controllers/user.js')
 
 router.get('/', userController.listAllUsers)
 
-router.get('/:id', (req, res) => {
-    res.json('')
-})
+router.get('/:id', userController.listOneUser)
 
-router.post('/new')
+router.post('/update/:id', userController.updateUser)
 
 module.exports = router

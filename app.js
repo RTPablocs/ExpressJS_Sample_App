@@ -16,13 +16,15 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 
-app.use('/', indexRouting)
-app.use('/products', productRouting)
-app.use('/users', userRouting)
-
 app.use('/styles', express.static(path.join(__dirname, 'styles')))
 
 app.use(logger('dev'))
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+app.use('/', indexRouting)
+app.use('/products', productRouting)
+app.use('/users', userRouting)
 
 // Not found error handler
 app.use(function (req, res, next) {
