@@ -2,9 +2,20 @@ const models = require('../models')
 
 
 module.exports = {
-    listAllUsers(req, res) {
-        const users = models.user.findAll({})
-        .then(users => res.json(users))
-        .catch(console.error)
-    }
+    async listAllUsers(req, res) {
+        let r = {}
+        r.total = await models.user.count({})
+        r.users = await models.user.findAll({})
+
+        res.json(r);
+    },
+
+    listOneUser(req, res) {
+
+    },
+
+    updateUser(req, res) { },
+
+
+    deleteUser(req, res) { },
 }
