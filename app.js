@@ -6,6 +6,7 @@ const logger = require('morgan')
 const indexRouting = require('./routes/index.js')
 const productRouting = require('./routes/products.js')
 const userRouting = require('./routes/users.js')
+const cors = require('cors')
 
 //Declaration group
 const app = express()
@@ -18,6 +19,7 @@ app.set('view engine', 'pug')
 
 app.use('/styles', express.static(path.join(__dirname, 'styles')))
 
+app.use(cors())
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
