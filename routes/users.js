@@ -7,6 +7,12 @@ router.get('/', userController.listAllUsers)
 
 router.get('/:id', userController.listOneUser)
 
-router.post('/update/:id', userController.updateUser)
+router.get('/my-data/:id', userController.getMyOwnData)
+
+router.post('/new', userController.registerUser)
+
+router.patch('/update/:id', userController.updateUser)
+
+router.delete('/delete/:id', userController.deleteUser)
 
 module.exports = router
