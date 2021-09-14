@@ -15,11 +15,13 @@ module.exports = {
       },
       username: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       mail: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       password: {
         allowNull: false,
@@ -27,11 +29,11 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATETIME
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATETIME
+        type: Sequelize.DATE
       }
     });
   },
