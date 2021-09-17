@@ -23,6 +23,7 @@ app.use(cors())
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.disable('etag')
 
 app.use('/', indexRouting)
 app.use('/products', productRouting)
