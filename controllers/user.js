@@ -4,7 +4,7 @@ module.exports = {
     async listAllUsers(req, res) {
         let r = {}
         r.total = await models.user.count({})
-        r.users = await models.user.findAll({ attributes: ['name', 'surname', 'mail', 'username'] })
+        r.users = await models.user.findAll({ attributes: ['id', 'name', 'surname', 'mail', 'username', 'department'] })
 
         res.status(200).json(r)
 
@@ -12,7 +12,7 @@ module.exports = {
 
     async listOneUser(req, res) {
         let r = {}
-        r.user = await models.user.findOne({ where: { id: req.params.id }, attributes: ['name', 'surname', 'mail', 'username'] })
+        r.user = await models.user.findOne({ where: { id: req.params.id }, attributes: ['id', 'name', 'surname', 'mail', 'username', 'department'] })
         res.status(200).json(r)
     },
 

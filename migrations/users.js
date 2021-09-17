@@ -23,6 +23,10 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true
       },
+      department: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       password: {
         allowNull: false,
         type: Sequelize.STRING
