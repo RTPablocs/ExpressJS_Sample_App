@@ -7,7 +7,9 @@ router.get('/', userController.listAllUsers)
 
 router.get('/:id', userController.listOneUser)
 
-router.get('/my-data/:id', userController.getMyOwnData)
+router.get('/mydata/:id', userController.getMyOwnData)
+
+router.get('/check/:username', userController.checkUser)
 
 router.post('/new', userController.registerUser)
 

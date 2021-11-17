@@ -8,6 +8,7 @@ module.exports = {
         surname: 'CS',
         username: 'Pablocs',
         mail: 'amdpablocs@gmail.com',
+        department: 'JALS',
         password: 'test',
         createdAt: new Date(),
         updatedAt: new Date()

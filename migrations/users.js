@@ -21,7 +21,8 @@ module.exports = {
       mail: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true
+        unique: true,
+        is: '/^[a-z]*[0-9]*@[a-z]*.[a-z]*'
       },
       department: {
         allowNull: false,
